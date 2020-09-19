@@ -1,7 +1,10 @@
 apply plugin: 'com.android.library'
 apply plugin: 'maven'
+apply plugin: 'com.github.dcendents.android-maven'
 
 def latestSdkVersion = 28
+
+group='com.github.bastionkid'
 
 android {
     compileSdkVersion latestSdkVersion
