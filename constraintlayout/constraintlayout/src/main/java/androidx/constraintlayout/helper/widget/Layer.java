@@ -229,11 +229,7 @@ public class Layer extends ConstraintHelper {
         int right = (int) mComputedMaxX+ getPaddingRight();
         int bottom = (int)mComputedMaxY + getPaddingBottom();
         layout(left ,top,right,bottom);
-
-        if (!Float.isNaN(mGroupRotateAngle)) {
-            transform();
-        }
-
+        transform();
     }
 
     private void reCacheViews() {
@@ -332,7 +328,10 @@ public class Layer extends ConstraintHelper {
             view.setTranslationY(shifty);
             view.setScaleY(mScaleY);
             view.setScaleX(mScaleX);
-            view.setRotation(mGroupRotateAngle);
+
+            if (!Float.isNaN(mGroupRotateAngle)) {
+                view.setRotation(mGroupRotateAngle);
+            }
         }
     }
 }
