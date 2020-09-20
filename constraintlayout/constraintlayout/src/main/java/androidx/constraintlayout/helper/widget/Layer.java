@@ -307,7 +307,8 @@ public class Layer extends ConstraintHelper {
         }
         calcCenters();
 
-        double rad = Math.toRadians(mGroupRotateAngle);
+        double rad = Float.isNaN(mGroupRotateAngle) ? 0 : Math.toRadians(mGroupRotateAngle);
+
         float sin = (float) Math.sin(rad);
         float cos = (float) Math.cos(rad);
         float m11 = mScaleX * cos;
